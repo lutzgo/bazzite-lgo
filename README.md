@@ -1,8 +1,16 @@
 # bazzite-lgo &nbsp; [![build-ublue](https://github.com/lutzgo/bazzite-lgo/actions/workflows/build.yml/badge.svg)](https://github.com/lutzgo/bazzite-lgo/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+This is my custom Bazzite image that tries to add all the development capabilities from the Bluefin/Aurora DX images. It includes docker, podman, vscode, etc... to get you started coding with devcontainers faster as advertised by the Bluefin project.
+Disclaimer
 
-After setup, it is recommended you update this README to describe your custom image.
+These images as provided as is and are considered in alpha state!
+Desktop Environment
+
+As with the other ublue-os images, this image comes with either KDE or GNOME Desktop Environment. The imaghes respect Bazzite naming convention:
+
+- bazzite-dx based on bazzite, runs KDE with aurora-dx layered on top
+- bazzite-gnome-dx based on bazzite-gnome, runs GNOME with bluefin-dx layered on top
+
 
 ## Installation
 
@@ -11,7 +19,9 @@ After setup, it is recommended you update this README to describe your custom im
 
 To rebase an existing atomic Fedora installation to the latest build:
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
+- First choose the flavor of the image you'd like to install (either bazzite-dx or bazzite-gnome-dx)
+
+- Then rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/lutzgo/bazzite-lgo:latest
   ```
